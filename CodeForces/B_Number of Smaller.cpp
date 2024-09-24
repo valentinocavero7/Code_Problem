@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
-
+ 
 using namespace std; 
-
+ 
 int main() {
     int n, m;
     cin >> n >> m;
@@ -15,13 +15,19 @@ int main() {
     {
         cin >> b[i];
     }
-    int i = 0, j = 0;
     vector<int> c;
-    while (j < m || i < n)
-    { 
-        if(a[i] < b[j]) {
-            a[i] = 1;
+    int cnt = 0;
+    int i = 0;
+    int j = 0;
+    while (j < m)
+    {
+        while (i < n && a[i] < b[j])
+        {
+            i++;
+            cnt++;
         }
+        c.push_back(cnt);
+        j++;
     }
     for(auto x : c) {
         cout << x << ' ';
