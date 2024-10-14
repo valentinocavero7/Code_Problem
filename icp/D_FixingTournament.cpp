@@ -12,15 +12,19 @@ int main()
     ll num_worse = pow(2, n); // peor numero
     ll team_worse = num_worse - r;
     ll num_rounds = 1;
+    if(r == 1) {
+        cout << n << endl;
+        return 0;
+    }
     while (team_worse > 0)
     {
         team_worse--; // enfretarme a un equipo
         if(team_worse % 2 != 0 && team_worse > 1) {
             team_worse--; // mando a un equipo con un top
-            
         } 
         team_worse /= 2; // equipos se enfrentan y quedan la mitad
         num_rounds++;
+        int m = __builtin_clz(x);
     }
     cout << num_rounds << endl;
 }
